@@ -1,0 +1,115 @@
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+#header.white_bg .logo img {
+  content: url(../img/logo_green.png);
+}
+#header.white_bg .hamburger_btn img {
+  content: url(../img/hamburger_black.png);
+}
+
+#fullpage .intro {
+  background-image: url(../img/intro_bg.png);
+  background-size: cover;
+}
+#fullpage .intro .main_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#fullpage .intro .main_txt h1 {
+  font-size: 30px;
+  font-weight: 500;
+}
+#fullpage .intro .main_txt .line {
+  width: 2px;
+  height: 10px;
+  background-color: white;
+}
+#fullpage .east_course {
+  background-image: url(../img/east_course.png);
+  background-size: cover;
+}
+#fullpage .south_course {
+  background-image: url(../img/south_course.png);
+  background-size: cover;
+}
+#fullpage .west_course {
+  background-image: url(../img/west_course.png);
+  background-size: cover;
+}
+#fullpage .family_site .links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100px;
+}
+#fullpage .family_site .links .link {
+  aspect-ratio: 320/200;
+  min-height: 200px;
+  position: relative;
+}
+#fullpage .family_site .links .link .txt {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#fullpage .common_txt {
+  padding: 0 20px;
+}
+#fullpage .common_txt h2 {
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+#fullpage .common_txt h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+#fullpage .common_txt p {
+  line-height: 22px;
+  margin-bottom: 30px;
+}
+#fullpage .common_txt .btn_container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 18px;
+}
+#fullpage .common_txt .btn_container a {
+  display: flex;
+  flex-direction: column;
+}
+#fullpage .common_txt .btn_container a .txt {
+  font-size: 26px;
+}
+#fullpage .common_txt .btn_container a img {
+  position: relative;
+  left: 18px;
+}
+#fullpage .animation_txt.active_now {
+  animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
