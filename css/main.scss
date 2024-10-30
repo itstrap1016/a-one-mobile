@@ -23,6 +23,116 @@
   }
 }
 
+#quick_menu {
+  position: fixed;
+  bottom: -83px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s;
+
+  &.clicked {
+    bottom: 0;
+  }
+
+  .slide_btn {
+    width: 50px;
+    height: 20px;
+    position: relative;
+
+    .triangle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.clicked {
+      .triangle {
+        transform: translate(-50%, -50%) rotateX(180deg);
+      }
+    }
+  }
+  .menu {
+    background-color: white;
+    padding: 10px;
+    width: 321px;
+    border-radius: 8px 8px 0 0;
+
+    &.clicked {
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    }
+
+    > ul {
+      display: flex;
+      align-items: center;
+
+      .reserv_btn,
+      .reserv_check_btn {
+        display: flex;
+        align-items: center;
+
+        button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          span {
+            color: #222;
+            font-size: 14px;
+          }
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 2px;
+          height: 63px;
+          background-color: #dbdbdb;
+          margin-left: 10px;
+        }
+      }
+
+      .reserv_btn {
+      }
+      .reserv_check_btn {
+        padding-left: 10px;
+      }
+
+      .weather_menu {
+        ul {
+          display: flex;
+          gap: 8px;
+          padding-left: 10px;
+
+          li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+
+            img {
+              width: 33px;
+              height: 33px;
+            }
+            .day {
+              font-size: 12px;
+              color: #666;
+            }
+            .text {
+              font-size: 14px;
+              color: #222;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 #fullpage {
   .intro {
     background-image: url(../img/intro_bg.png);
@@ -64,20 +174,67 @@
     background-size: cover;
   }
   .family_site {
-    .links {
+    .links_container {
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 100px;
+      left: 20px;
+      transform: translateY(-50%);
+      top: calc(50% - 95px);
+      width: calc(100% - 20px);
+      overflow-x: scroll;
+      padding-bottom: 10px;
+      .links {
+        display: flex;
+        width: 1000px;
+        gap: 20px;
 
-      .link {
-        aspect-ratio: 320 / 200;
-        min-height: 200px;
-        position: relative;
-        .txt {
-          position: absolute;
-          top: 0;
-          left: 0;
+        .link {
+          width: 320px;
+          img {
+            width: 320px;
+            height: 200px;
+          }
+
+          .txt {
+            margin-top: 16px;
+            h2 {
+              color: #222;
+              font-size: 20px;
+            }
+            p {
+              color: #222;
+              margin-top: 8px;
+            }
+          }
+        }
+      }
+    }
+    footer {
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ececec;
+
+      .footer_logo {
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+
+      .txt {
+        p {
+          color: #666;
+          line-height: 1.5;
+          margin-bottom: 12px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          span {
+            color: #666;
+            font-weight: 500;
+          }
         }
       }
     }

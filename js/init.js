@@ -40,4 +40,21 @@ const aniTextInit = () => {
   }
 };
 
-aniTextInit();
+const quickMenuInit = () => {
+  const slideBtn = document.querySelector("#quick_menu .slide_btn");
+  const quickMenu = document.querySelector("#quick_menu");
+  const menu = document.querySelector("#quick_menu .menu");
+
+  slideBtn.addEventListener("click", () => {
+    slideBtn.classList.toggle("clicked");
+    quickMenu.classList.toggle("clicked");
+    menu.classList.toggle("clicked");
+  });
+};
+
+const init = () => {
+  aniTextInit();
+  quickMenuInit();
+};
+
+init();
