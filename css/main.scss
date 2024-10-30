@@ -280,6 +280,151 @@
   }
 }
 
+#pop_up {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+  background-color: #fff;
+
+  .header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #datepicker {
+    display: none;
+  }
+  .flatpickr-calendar {
+    color: #222;
+    box-shadow: none;
+    margin: 0 auto;
+
+    .flatpickr-months {
+      margin-bottom: 10px;
+      align-items: center;
+      .flatpickr-current-month {
+        padding-top: 4px;
+        .flatpickr-monthDropdown-months {
+          font-size: 20px;
+          font-weight: 500;
+          color: #222;
+        }
+        .numInputWrapper {
+          width: 70px;
+        }
+        .cur-year {
+          font-size: 20px;
+          font-weight: 500;
+          color: #222;
+        }
+      }
+    }
+    .flatpickr-weekdays {
+      margin-bottom: 0;
+    }
+    .flatpickr-weekday {
+      color: #222;
+      font-weight: 500;
+      font-size: 16px;
+    }
+    .flatpickr-day {
+      font-size: 16px;
+      &.selected {
+        font-weight: 500;
+        background-color: #2fb400;
+        border-color: #2fb400;
+      }
+    }
+  }
+  .tab_table {
+    margin-top: 20px;
+    padding: 0 20px;
+    .tab {
+      background-color: #d7f1ce;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 18px;
+      margin-bottom: 20px;
+      button {
+        color: #666;
+        padding: 10px 6px;
+
+        &.active_now {
+          background-color: #2fb400;
+          border-radius: 18px;
+          color: #fff;
+        }
+      }
+    }
+    .time_table {
+      max-height: 500px;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 4px; /* 스크롤바 너비 */
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #dbdbdb; /* 스크롤바 색상 */
+        border-radius: 4px; /* 스크롤바 모서리 둥글게 */
+      }
+      &::-webkit-scrollbar-track {
+        background: #ededed; /* 스크롤바 트랙 색상 */
+      }
+      table {
+        width: 100%;
+        thead {
+          position: sticky;
+          top: 0;
+          background-color: white;
+          border-bottom: 1px solid #ddd;
+          tr {
+            border-bottom: 1px solid #ddd;
+            th {
+              color: #222;
+              font-weight: 500;
+              padding-bottom: 15px;
+            }
+          }
+        }
+        tbody {
+          tr {
+            &:first-child {
+              td {
+                padding-top: 10px;
+              }
+            }
+
+            td {
+              padding: 5px 0;
+              text-align: center;
+              color: #666;
+              select {
+                color: #666;
+                border: none;
+                option {
+                  color: #666;
+                }
+              }
+              button {
+                font-weight: 500;
+                color: #2fb400;
+
+                &:disabled {
+                  color: #666;
+                  cursor: initial;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

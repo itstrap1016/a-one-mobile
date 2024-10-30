@@ -39,7 +39,6 @@ const aniTextInit = () => {
     activeText.classList.add("active_now");
   }
 };
-
 const quickMenuInit = () => {
   const slideBtn = document.querySelector("#quick_menu .slide_btn");
   const quickMenu = document.querySelector("#quick_menu");
@@ -51,10 +50,18 @@ const quickMenuInit = () => {
     menu.classList.toggle("clicked");
   });
 };
+const calendarInit = () => {
+  flatpickr("#datepicker", {
+    inline: true,
+    locale: "ko",
+  });
+};
+const popupInit = () => {};
 
 const init = () => {
   aniTextInit();
   quickMenuInit();
+  calendarInit();
 };
 
 init();
