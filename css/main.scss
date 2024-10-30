@@ -288,6 +288,11 @@
   height: 100vh;
   z-index: 200;
   background-color: #fff;
+  display: none;
+
+  &.clicked {
+    display: block;
+  }
 
   .header {
     padding: 20px;

@@ -248,6 +248,10 @@
   height: 100vh;
   z-index: 200;
   background-color: #fff;
+  display: none;
+}
+#pop_up.clicked {
+  display: block;
 }
 #pop_up .header {
   padding: 20px;

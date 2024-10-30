@@ -56,12 +56,26 @@ const calendarInit = () => {
     locale: "ko",
   });
 };
-const popupInit = () => {};
+const popupInit = () => {
+  const reservBtn = document.querySelector(
+    "#quick_menu .menu > ul .reserv_btn button"
+  );
+  const closeBtn = document.querySelector("#pop_up .close_btn");
+  const popup = document.querySelector("#pop_up");
+
+  reservBtn.addEventListener("click", () => {
+    popup.classList.add("clicked");
+  });
+  closeBtn.addEventListener("click", () => {
+    popup.classList.remove("clicked");
+  });
+};
 
 const init = () => {
   aniTextInit();
   quickMenuInit();
   calendarInit();
+  popupInit();
 };
 
 init();
